@@ -3,9 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    public float moveInput;
+    public float moveSpeed = 5f;
+    private Rigidbody2D rb;
+    private Vector2 moveInput;
 
     public void Awake()
     {
@@ -14,11 +14,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+        moveInput = new Vector2(moveX, moveY).normalized;
     }
 
     public void FixedUpdate()
     {
-        rb.MovePosition(rb.position + new Vector2(moveInput * moveSpeed * Time.fixedDeltaTime, 0f));
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 }
