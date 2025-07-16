@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 28250364}
   - component: {fileID: 28250363}
   m_Layer: 0
-  m_Name: Square (18)
+  m_Name: segura a platarforma que anda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 41059374}
   - component: {fileID: 41059377}
   m_Layer: 0
-  m_Name: Square (14)
+  m_Name: plataforma que anda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,8 +558,9 @@ GameObject:
   - component: {fileID: 272566448}
   - component: {fileID: 272566447}
   - component: {fileID: 272566446}
+  - component: {fileID: 272566449}
   m_Layer: 0
-  m_Name: Square (5)
+  m_Name: Chao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,7 +600,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.12695098}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -609,7 +610,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.5924416}
   m_EdgeRadius: 0
 --- !u!212 &272566447
 SpriteRenderer:
@@ -675,12 +676,39 @@ Transform:
   m_GameObject: {fileID: 272566445}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.0021223384, w: 0.99999774}
-  m_LocalPosition: {x: 0.0248, y: -5.0734, z: 0}
-  m_LocalScale: {x: 22.542698, y: 0.55341566, z: 1.4861}
+  m_LocalPosition: {x: 0.0253, y: -4.957, z: 0}
+  m_LocalScale: {x: 22.542698, y: 0.3194322, z: 1.4861}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.243}
+--- !u!50 &272566449
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272566445}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &638635539
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +721,7 @@ GameObject:
   - component: {fileID: 638635541}
   - component: {fileID: 638635540}
   m_Layer: 0
-  m_Name: Square (12)
+  m_Name: Paredao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -827,7 +855,7 @@ GameObject:
   - component: {fileID: 810906898}
   - component: {fileID: 810906897}
   m_Layer: 0
-  m_Name: Square (15)
+  m_Name: Bloco branco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,7 +991,7 @@ GameObject:
   - component: {fileID: 865948250}
   - component: {fileID: 865948254}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -999,11 +1027,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.046838522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1013,7 +1041,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.90632296}
   m_EdgeRadius: 0
 --- !u!50 &865948251
 Rigidbody2D:
@@ -1106,7 +1134,7 @@ Transform:
   m_GameObject: {fileID: 865948249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.14, y: -4.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1125,6 +1153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  rb: {fileID: 865948251}
+  moveInput: {x: 0, y: 0}
 --- !u!1 &937348924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1347,7 @@ GameObject:
   - component: {fileID: 1027354232}
   - component: {fileID: 1027354231}
   m_Layer: 0
-  m_Name: Square (19)
+  m_Name: Bloco cinza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1451,7 +1481,7 @@ GameObject:
   - component: {fileID: 1148043757}
   - component: {fileID: 1148043756}
   m_Layer: 0
-  m_Name: Square (17)
+  m_Name: Bloco cinza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,7 +1615,7 @@ GameObject:
   - component: {fileID: 1689124645}
   - component: {fileID: 1689124644}
   m_Layer: 0
-  m_Name: Square (9)
+  m_Name: Bloco cinza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1719,7 +1749,7 @@ GameObject:
   - component: {fileID: 2045677911}
   - component: {fileID: 2045677910}
   m_Layer: 0
-  m_Name: Square (13)
+  m_Name: Obstaculo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1853,7 +1883,7 @@ GameObject:
   - component: {fileID: 2144070485}
   - component: {fileID: 2144070484}
   m_Layer: 0
-  m_Name: Square (6)
+  m_Name: Bloco cinza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1982,7 +2012,7 @@ SceneRoots:
   - {fileID: 67620347}
   - {fileID: 937348928}
   - {fileID: 953154307}
-  - {fileID: 272566448}
+  - {fileID: 865948253}
   - {fileID: 2144070486}
   - {fileID: 1689124646}
   - {fileID: 1148043758}
@@ -1992,4 +2022,4 @@ SceneRoots:
   - {fileID: 28250365}
   - {fileID: 2045677912}
   - {fileID: 41059376}
-  - {fileID: 865948253}
+  - {fileID: 272566448}
