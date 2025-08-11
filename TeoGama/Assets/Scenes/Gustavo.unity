@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 41059375}
   - component: {fileID: 41059374}
   - component: {fileID: 41059377}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: plataforma que anda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 638635542}
   - component: {fileID: 638635541}
   - component: {fileID: 638635540}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Paredao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 810906899}
   - component: {fileID: 810906898}
   - component: {fileID: 810906897}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bloco branco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.046838522}
+  m_Offset: {x: 0, y: 0.11709595}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1041,7 +1041,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.90632296}
+  m_Size: {x: 1, y: 0.7658081}
   m_EdgeRadius: 0
 --- !u!50 &865948251
 Rigidbody2D:
@@ -1153,6 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  jumpForce: 10
   rb: {fileID: 865948251}
   moveInput: {x: 0, y: 0}
 --- !u!1 &937348924
@@ -1346,7 +1347,7 @@ GameObject:
   - component: {fileID: 1027354233}
   - component: {fileID: 1027354232}
   - component: {fileID: 1027354231}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bloco cinza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1480,7 +1481,7 @@ GameObject:
   - component: {fileID: 1148043758}
   - component: {fileID: 1148043757}
   - component: {fileID: 1148043756}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bloco cinza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1792,7 +1793,7 @@ GameObject:
   - component: {fileID: 1689124646}
   - component: {fileID: 1689124645}
   - component: {fileID: 1689124644}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bloco cinza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,7 +1927,7 @@ GameObject:
   - component: {fileID: 2045677912}
   - component: {fileID: 2045677911}
   - component: {fileID: 2045677910}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Obstaculo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2060,8 +2061,8 @@ GameObject:
   - component: {fileID: 2144070486}
   - component: {fileID: 2144070485}
   - component: {fileID: 2144070484}
-  m_Layer: 0
-  m_Name: Bloco cinza
+  m_Layer: 3
+  m_Name: Bloco azul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
