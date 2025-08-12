@@ -16,10 +16,7 @@ public class EnemyShooter : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        else
-        {
-            Debug.LogError("Jogador não encontrado. Certifique-se de que seu jogador tem a tag 'Player'.");
-        }
+
     }
 
     public void Update()
@@ -34,6 +31,7 @@ public class EnemyShooter : MonoBehaviour
             Shoot();
             nextFireTime = Time.time + shootingCooldown;
         }
+
     }
 
     public void Shoot()
