@@ -18,12 +18,6 @@ public class PlayerMovement : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         moveInput = new Vector2(moveX, 0f).normalized;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        }
-
     }
 
 
