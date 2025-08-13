@@ -2,15 +2,55 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public float lifetime;
     public float speed = 1f;
-    public float lifetime = 5f;
-    private Transform target;
-    private Rigidbody2D rb;
+    public Transform target;
+    public Rigidbody2D rb;
+    public float shootingRange = 10f;
+    public float shootingCooldown = 2f;
+    public GameObject projectilePrefab;
+    public Transform firePoint;
+    public Transform player;
+    public float nextFireTime;
 
-    void Start()
+    public void Start()
     {
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifetime);
+    }
+
+
+    public void Update()
+    {
+        if (player == null)
+            return;
+
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (distanceToPlayer <= shootingRange && Time.time >= nextFireTime)
+        {
+            Shoot();
+            nextFireTime = Time.time + shootingCooldown;
+        }
+
+        if (distanceToPlayer <= shootingRange && Time.time >= nextFireTime)
+        {
+            Shoot();
+
+            nextFireTime = Time.time + shootingCooldown;
+        }
+
+        if (distanceToPlayer <= shootingRange && Time.time >= nextFireTime)
+        {
+            Shoot();
+
+            nextFireTime = Time.time + shootingCooldown;
+        }
     }
 
     public void Seek(Transform _target)
@@ -23,7 +63,19 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public void Shoot()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+
+
+        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        if (projectileScript != null)
+        {
+            projectileScript.Seek(player);
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
     }
