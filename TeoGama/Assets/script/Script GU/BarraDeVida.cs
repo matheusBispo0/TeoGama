@@ -12,27 +12,11 @@ public class BarraDeVida : MonoBehaviour
         slider.value = vida;
     }
 
+
     public void SetVida(int vida)
     {
         slider.value = vida;
-        AtualizarCor();
     }
 
-    public void AtualizarCor()
-    {
-        float porcentagem = slider.value / slider.maxValue;
 
-        if (porcentagem > 0.6f)
-        {
-            fill.color = Color.green;
-        }
-        else if (porcentagem > 0.3f)
-        {
-            fill.color = Color.yellow;
-        }
-        else
-        {
-            fill.color = Color.red;
-        }
-    }
 }

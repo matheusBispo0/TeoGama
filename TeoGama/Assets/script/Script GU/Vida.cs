@@ -6,19 +6,21 @@ public class Vida : MonoBehaviour
     public int vidaAtual;
     public BarraDeVida barraDeVida;
 
-    public void Start()
+    void Start()
     {
         vidaAtual = vidaMaxima;
+
         if (barraDeVida != null)
         {
             barraDeVida.SetMaxVida(vidaMaxima);
+            barraDeVida.SetVida(vidaAtual);
         }
     }
 
     public void TomarDano(int dano)
     {
         vidaAtual -= dano;
-        Debug.Log(gameObject.name + " tomou " + dano + " de dano!");
+        if (vidaAtual < 0) vidaAtual = 0;
 
         if (barraDeVida != null)
         {
@@ -31,7 +33,7 @@ public class Vida : MonoBehaviour
         }
     }
 
-    public void Morrer()
+    void Morrer()
     {
         Debug.Log(gameObject.name + " morreu!");
         Destroy(gameObject);
