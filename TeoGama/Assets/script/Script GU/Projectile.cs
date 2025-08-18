@@ -75,6 +75,8 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    public int dano = 10;
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);

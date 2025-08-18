@@ -856,6 +856,7 @@ GameObject:
   - component: {fileID: 783159255}
   - component: {fileID: 783159254}
   - component: {fileID: 783159258}
+  - component: {fileID: 783159259}
   m_Layer: 0
   m_Name: Enemy Shooter
   m_TagString: Untagged
@@ -1029,6 +1030,20 @@ MonoBehaviour:
   firePoint: {fileID: 783159257}
   player: {fileID: 865948253}
   nextFireTime: 0
+  dano: 10
+--- !u!114 &783159259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783159252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f97b9763beb22c4b889004029ab275b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 10
 --- !u!1 &810906896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1191,8 @@ GameObject:
   - component: {fileID: 865948251}
   - component: {fileID: 865948250}
   - component: {fileID: 865948254}
+  - component: {fileID: 865948255}
+  - component: {fileID: 865948256}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1320,7 +1337,7 @@ Transform:
   m_GameObject: {fileID: 865948249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.03, y: -4.25, z: 0}
+  m_LocalPosition: {x: -1.2, y: -4.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1342,6 +1359,33 @@ MonoBehaviour:
   jumpForce: 10
   rb: {fileID: 1244749125}
   moveInput: {x: 0, y: 0}
+--- !u!114 &865948255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865948249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9986570cb3d2d994591f71ae59430000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 100
+  vidaAtual: 100
+--- !u!114 &865948256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865948249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f97b9763beb22c4b889004029ab275b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 10
 --- !u!1 &937348924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,6 +1847,7 @@ GameObject:
   - component: {fileID: 1244749125}
   - component: {fileID: 1244749124}
   - component: {fileID: 1244749123}
+  - component: {fileID: 1244749128}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1968,6 +2013,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1244749128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244749122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f97b9763beb22c4b889004029ab275b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 10
 --- !u!1 &1689124643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2545,7 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   player: {fileID: 865948253}
   nextFireTime: 0
+  dano: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
