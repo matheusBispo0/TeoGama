@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 3f; 
     public bool followOnYAxis = false;
 
-    void Update()
+    public void Update()
     {
         if (player != null)
         {
