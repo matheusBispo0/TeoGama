@@ -1,29 +1,34 @@
 using UnityEngine;
-
-public class Personagem : MonoBehaviour
+public class ApareceSome : MonoBehaviour
 {
-    public float intervalo = 2f;
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
+    private int contador = 0;
+    private bool jaApareceu = false;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
-        InvokeRepeating("Alternar", intervalo, intervalo);
+        // Começa invisível
+        spriteRenderer.enabled = false;
     }
-    void Alternar()
+    void OnMouseEnter()
     {
-        bool novoEstado = !spriteRenderer.enabled;
-        spriteRenderer.enabled = novoEstado;
-        col.enabled = novoEstado;
-    }
-    void OnMouseDown()
-    {
-        if (spriteRenderer.enabled)
+        if (!jaApareceu)
         {
-            spriteRenderer.enabled = false;
-            col.enabled = false;
-            GameManager.instancia.AdicionarPonto();
+            // Faz aparecer
+            spriteRenderer.enabled = true;
+            contador++;
+            jaApareceu = true;
+            Debug.Log("Personagem apareceu! Contagem: " + contador);
+        }
+    }
+    void Update()
+    {
+        // Segurança extra: se já apareceu, nunca mais some
+        if (jaApareceu && !spriteRenderer.enabled)
+        {
+            spriteRenderer.enabled = true;
         }
     }
 }
