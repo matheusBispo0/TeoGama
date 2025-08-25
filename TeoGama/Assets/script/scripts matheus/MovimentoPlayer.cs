@@ -1,42 +1,17 @@
 using UnityEngine;
 
-
-
 public class MovimentoPlayer : MonoBehaviour
 
 {
 
     public float moveSpeed = 5f;
 
-    public float jumpForce = 5f;
-
-
+    public float jumpForce = 7f;
 
     private Rigidbody2D rb;
 
-    private bool isGrounded;
-
-
-
-    [SerializeField]
-
-    public Transform groundCheck;
-
-    [SerializeField]
-
-    private float checkRadius = 0.2f;
-
-    [SerializeField]
-
-    private LayerMask groundLayer;
-
-
-
-    // Adicione esta nova variável
-
-    private bool canJump;
-
-
+    private bool isGrounded = false;
+    private bool jogadorPerto = false;
 
     void Start()
 
@@ -46,50 +21,67 @@ public class MovimentoPlayer : MonoBehaviour
 
     }
 
-
-
     void Update()
 
     {
 
-        float moveInput = Input.GetAxisRaw("Horizontal");
+        float move = Input.GetAxis("Horizontal");
 
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-
-
-
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+        rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
 
 
-
-        // Verifique se o jogador pode pular
-
-        if (isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
 
         {
 
-            canJump = true;
-
-        }
-
-
-
-        // Condição para pular: botão pressionado E pode pular
-
-        if (Input.GetButtonDown("Jump") && canJump)
-
-        {
-
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-
-
-
-            // Defina a flag como false imediatamente após o pulo
-
-            canJump = false;
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
         }
 
     }
 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+
+    {
+
+        if (collision.collider.CompareTag("Ground"))
+
+        {
+
+            isGrounded = true;
+
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+
+    {
+
+        if (collision.collider.CompareTag("Ground"))
+
+        {
+
+            isGrounded = false;
+
+        }
+
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jogadorPerto = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jogadorPerto = false;
+        }
+    }
 }
+
+

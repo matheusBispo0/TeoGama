@@ -7,15 +7,16 @@ TagManager:
   - Lanterna
   - HiddenPerson
   - Ground
+  - chave
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
+  - Inimigo
   - 
-  - Ground
   - 
   - 
   - 
@@ -44,9 +45,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
-    uniqueID: 1589816127
-    locked: 0
   m_RenderingLayers:
   - Default
-  - Ground

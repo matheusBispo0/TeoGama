@@ -22,6 +22,12 @@ public class Quadro : MonoBehaviour
             hinge.anchor = new Vector2(-0.5f, 0.5f);
             hinge.connectedAnchor = hinge.anchor;
             hinge.connectedBody = null;
+
+            hinge.useLimits = true;
+            JointAngleLimits2D limits = new JointAngleLimits2D();
+            limits.min = -50f; 
+            limits.max = 50f;
+            hinge.limits = limits;
         }
     }
 }
