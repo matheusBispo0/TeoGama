@@ -1,61 +1,61 @@
-using UnityEngine;
+using UnityEngine; 
 
+  
 
+[RequireComponent(typeof(Rigidbody2D))] 
 
-[RequireComponent(typeof(Rigidbody2D))]
+public class PlayerMovement : MonoBehaviour 
 
-public class PlayerMovement : MonoBehaviour
+{ 
 
-{
+    public float moveSpeed = 5f; 
 
-    public float moveSpeed = 5f;
+    public float jumpForce = 10f; 
 
-    public float jumpForce = 10f;
+    public Rigidbody2D rb; 
 
-    public Rigidbody2D rb;
+    public Vector2 moveInput; 
 
-    public Vector2 moveInput;
+  
 
+    public void Awake() 
 
+    { 
 
-    public void Awake()
+        rb = GetComponent<Rigidbody2D>(); 
 
-    {
+    } 
 
-        rb = GetComponent<Rigidbody2D>();
+  
 
-    }
+    public void Update() 
 
+    { 
 
+        float moveX = Input.GetAxisRaw("Horizontal"); 
 
-    public void Update()
+        moveInput = new Vector2(moveX, 0f).normalized; 
 
-    {
+  
 
-        float moveX = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKeyDown(KeyCode.Space)) 
 
-        moveInput = new Vector2(moveX, 0f).normalized;
+        { 
 
+            rb.AddForce(new Vector2(0f,jumpForce), ForceMode2D.Impulse); 
 
+        } 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+    } 
 
-        {
+  
 
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+    public void FixedUpdate() 
 
-        }
+    { 
 
-    }
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime); 
 
+    } 
 
-
-    public void FixedUpdate()
-
-    {
-
-        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
-
-    }
-
-}
+} 
