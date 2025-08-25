@@ -1,41 +1,34 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Vida : MonoBehaviour
 {
-    public int vidaMaxima = 100;
-    public int vidaAtual;
-    public BarraDeVida barraDeVida;
+    public Slider slider;
+    public float health = 100f;
+    public float VidaMax = 100f;
 
     void Start()
     {
-        vidaAtual = vidaMaxima;
-
-        if (barraDeVida != null)
-        {
-            barraDeVida.SetMaxVida(vidaMaxima);
-            barraDeVida.SetVida(vidaAtual);
-        }
+        slider.maxValue = VidaMax;
+        slider.value = health;
     }
 
-    public void TomarDano(int dano)
+    public void TakeDamage(float amount)
     {
-        vidaAtual -= dano;
-        if (vidaAtual < 0) vidaAtual = 0;
-
-        if (barraDeVida != null)
-        {
-            barraDeVida.SetVida(vidaAtual);
-        }
-
-        if (vidaAtual <= 0)
-        {
-            Morrer();
-        }
+        health -= amount; 
+        UpdateHealthBar(); 
     }
 
-    void Morrer()
+    public void Heal(float amount)
     {
-        Debug.Log(gameObject.name + " morreu!");
-        Destroy(gameObject);
+        health += amount;
+        UpdateHealthBar();
     }
+
+    private void UpdateHealthBar()
+    {
+        health = Mathf.Clamp(health, 0, VidaMax); 
+        slider.value = health;
+    }
+
 }
