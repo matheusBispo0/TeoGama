@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Lanterna
   - HiddenPerson
+  - Ground
+  - chave
   layers:
   - Default
   - TransparentFX
