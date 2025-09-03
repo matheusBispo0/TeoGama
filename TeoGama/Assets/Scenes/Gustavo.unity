@@ -2224,10 +2224,10 @@ MonoBehaviour:
   player: {fileID: 865948253}
   moveSpeed: 3
   jumpForce: 3
-  pauseTime: 2
+  pauseTime: 3
   chaseTime: 5
-  visionRange: 6
-  obstacleCheckDistance: 0.6
+  visionRange: 5
+  obstacleCheckDistance: 1
   groundCheck: {fileID: 0}
   patrolSpeed: 2
   patrolDistance: 3
