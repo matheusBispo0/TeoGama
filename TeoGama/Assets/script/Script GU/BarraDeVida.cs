@@ -18,5 +18,4 @@ public class BarraDeVida : MonoBehaviour
         slider.value = vida;
     }
 
-
 }

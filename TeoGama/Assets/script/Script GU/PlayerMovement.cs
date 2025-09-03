@@ -1,35 +1,49 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float jumpForce = 7f;
+    private Rigidbody2D rb;
+    private bool isGrounded = false;
 
-    public Rigidbody2D rb;
-
-    public Vector2 moveInput;
-
-    public void Awake()
+    public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
     public void Update()
     {
-        // Movimento horizontal
-        float moveX = Input.GetAxisRaw("Horizontal");
-        moveInput = new Vector2(moveX, 0f).normalized;
 
-        // Adiciona pulo, presta atenção
-        if (Input.GetKeyDown(KeyCode.Space))
+        float move = Input.GetAxis("Horizontal");
+        rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
     }
 
-    public void FixedUpdate()
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+
+    }
+
 }

@@ -10,13 +10,8 @@ public class MovimentoPlayer : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    private bool isGrounded;
-
-    [SerializeField] public Transform groundCheck;
-
-    [SerializeField] private float checkRadius = 0.2f;
-
-    [SerializeField] private LayerMask groundLayer;
+    private bool isGrounded = false;
+    private bool jogadorPerto = false;
 
     void Start()
 
@@ -30,22 +25,63 @@ public class MovimentoPlayer : MonoBehaviour
 
     {
 
-        float moveInput = Input.GetAxisRaw("Horizontal");
+        float move = Input.GetAxis("Horizontal");
 
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-
-
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+        rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
 
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
 
         {
 
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
         }
 
     }
 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+
+    {
+
+        if (collision.collider.CompareTag("Ground"))
+
+        {
+
+            isGrounded = true;
+
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+
+    {
+
+        if (collision.collider.CompareTag("Ground"))
+
+        {
+
+            isGrounded = false;
+
+        }
+
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jogadorPerto = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jogadorPerto = false;
+        }
+    }
 }
+
+
