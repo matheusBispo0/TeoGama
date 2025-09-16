@@ -1,15 +1,27 @@
 using UnityEngine;
+using TMPro;
+
 public class GameManager : MonoBehaviour
+
 {
-    public static GameManager instancia;
-    public int pontos = 0;
+
+    public static GameManager instance;
+    public TMP_Text scoreText;
+    private int score = 0;
+
     void Awake()
+
     {
-        instancia = this;
+        instance = this;
     }
-    public void AdicionarPonto()
+
+    public void AddPoint()
+
     {
-        pontos++;
-        Debug.Log("Pontos: " + pontos);
+
+        score++;
+        scoreText.text = "Encontrados: " + score;
+
     }
+
 }
