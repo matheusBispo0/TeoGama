@@ -1464,7 +1464,7 @@ RectTransform:
   m_GameObject: {fileID: 910904738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5000.799}
-  m_LocalScale: {x: 1.4566218, y: 2.2981064, z: 0.11615502}
+  m_LocalScale: {x: 1.4566218, y: 1.5512218, z: 0.11615502}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1118117256}
@@ -1472,8 +1472,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.6986923, y: -95.57132}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 6, y: -36.95}
+  m_SizeDelta: {x: 184.92, y: 54.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910904740
 MonoBehaviour:
@@ -1544,7 +1544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.72078687, b: 0.4764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2003,7 +2003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUIT
+  m_text: Voltar Para o Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2294,10 +2294,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.6
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: c625899d18fbc114caace1f8843e7a72, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2388,19 +2388,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1244749122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77a06633a2d08204fb3751622d0ca06a, type: 3}
+  m_Script: {fileID: 11500000, guid: 783b8f438eb66b34b95264bceedb7c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 865948253}
-  moveSpeed: 3
-  jumpForce: 3
-  pauseTime: 3
-  chaseTime: 5
-  visionRange: 5
-  obstacleCheckDistance: 1
-  groundCheck: {fileID: 0}
-  patrolSpeed: 2
-  patrolDistance: 3
+  speed: 3
+  visionRange: 10
 --- !u!1 &1403499839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 673970982547346438, guid: ac52368251c938f409d9420db7993f03, type: 3}

@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gustavo.unity
     guid: b87d53ce80900674d901c129a9da4aa9
+  - enabled: 1
+    path: Assets/Scenes/Iniciar (Melissa).unity
+    guid: 57a8f0685bea8bf498c162418dc8af00
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
