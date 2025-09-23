@@ -1433,9 +1433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9986570cb3d2d994591f71ae59430000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  health: 100
-  VidaMax: 100
 --- !u!1 &910904738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,7 +2225,6 @@ GameObject:
   - component: {fileID: 1244749126}
   - component: {fileID: 1244749125}
   - component: {fileID: 1244749124}
-  - component: {fileID: 1244749128}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2379,21 +2375,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1244749128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244749122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783b8f438eb66b34b95264bceedb7c6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 865948253}
-  speed: 3
-  visionRange: 10
 --- !u!1 &1403499839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 673970982547346438, guid: ac52368251c938f409d9420db7993f03, type: 3}
