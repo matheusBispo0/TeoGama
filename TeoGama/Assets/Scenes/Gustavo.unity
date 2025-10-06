@@ -1256,7 +1256,6 @@ GameObject:
   - component: {fileID: 865948251}
   - component: {fileID: 865948250}
   - component: {fileID: 865948254}
-  - component: {fileID: 865948255}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1421,18 +1420,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 7
---- !u!114 &865948255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865948249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9986570cb3d2d994591f71ae59430000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &910904738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2225,6 +2212,7 @@ GameObject:
   - component: {fileID: 1244749126}
   - component: {fileID: 1244749125}
   - component: {fileID: 1244749124}
+  - component: {fileID: 1244749128}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2293,7 +2281,7 @@ Rigidbody2D:
   m_Mass: 0.6
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: c625899d18fbc114caace1f8843e7a72, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2375,6 +2363,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1244749128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244749122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6777760f6a2d8e4faa4a24c06acddec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 865948253}
+  moveSpeed: 3
+  jumpForce: 2
 --- !u!1 &1403499839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 673970982547346438, guid: ac52368251c938f409d9420db7993f03, type: 3}
@@ -2425,7 +2428,7 @@ PrefabInstance:
       objectReference: {fileID: 865948253}
     - target: {fileID: 3960088908351209861, guid: ac52368251c938f409d9420db7993f03, type: 3}
       propertyPath: jumpForce
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3960088908351209861, guid: ac52368251c938f409d9420db7993f03, type: 3}
       propertyPath: followOnYAxis
