@@ -3,44 +3,40 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour
 {
-    public Transform player;
-    public float moveSpeed = 3f;
-    public float jumpForce = 7f;
-    private Rigidbody2D rb;
-    private bool isGrounded = false;
+    public Transform player;    
+    public float speed = 2f;      
+    public float chaseRange = 5f; 
 
-    public void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    private bool facingRight = true;
 
-    public void Update()
+    void Update()
     {
         if (player == null) return;
 
+        float distance = Vector2.Distance(transform.position, player.position);
 
-        Vector2 direction = new Vector2(player.position.x - transform.position.x, 0f).normalized;
-        rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
-
-        if (player.position.y > transform.position.y + 0.5f && isGrounded)
+       
+        if (distance < chaseRange)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            Vector2 direction = (player.position - transform.position).normalized;
+            transform.position = Vector2.MoveTowards(transform.position,
+            new Vector2(player.position.x, transform.position.y),
+            speed * Time.deltaTime);
+
+           
+            if ((direction.x > 0 && !facingRight) || (direction.x < 0 && facingRight))
+            {
+                Flip();
+            }
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Flip()
     {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
+        facingRight = !facingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }
 }
