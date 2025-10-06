@@ -128,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 228697621}
-  - component: {fileID: 228697622}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -153,18 +152,6 @@ Transform:
   - {fileID: 887260389}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &228697622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228697620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac12a1921e74c434a9553ac6c2b0daea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &308723364
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887260388}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.45, y: -1.91, z: -66.88876}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -404,7 +391,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 15
-  m_PointLightOuterAngle: 155.46962
+  m_PointLightOuterAngle: 89.83426
   m_PointLightInnerRadius: 1
   m_PointLightOuterRadius: 12
   m_ShapeLightParametricSides: 5
@@ -429,7 +416,6 @@ GameObject:
   - component: {fileID: 1168723246}
   - component: {fileID: 1168723245}
   - component: {fileID: 1168723244}
-  - component: {fileID: 1168723247}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -511,18 +497,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168723242}
   m_CullTransparentMesh: 1
---- !u!114 &1168723247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168723242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac12a1921e74c434a9553ac6c2b0daea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1308989392
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +509,6 @@ GameObject:
   - component: {fileID: 1308989395}
   - component: {fileID: 1308989394}
   - component: {fileID: 1308989393}
-  - component: {fileID: 1308989397}
   m_Layer: 5
   m_Name: MaoLanterna_Canvas
   m_TagString: Untagged
@@ -626,18 +599,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1308989397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308989392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac12a1921e74c434a9553ac6c2b0daea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1641782329
 GameObject:
   m_ObjectHideFlags: 0

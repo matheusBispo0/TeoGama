@@ -1,21 +1,41 @@
-using UnityEngine;
-using UnityEngine.Rendering.Universal; // para Light2D
-public class LanternaController : MonoBehaviour
+Ôªøusing UnityEngine;
+
+public class LanternController : MonoBehaviour
+
 {
-    public Transform maoLanterna;       // sprite da m„o e lanterna
-    public Light2D luzLanterna;         // sua luz Spot Light 2D
-    public float offsetRotacao = -90f;  // ajuste se a rotaÁ„o ficar torta
+
+    public Transform lantern; // objeto da lanterna
+
+    public float maxAngle = 60f; // m√°ximo para cima/baixo
+
+    public float minAngle = -60f; // m√≠nimo para cima/baixo
+
     void Update()
+
     {
-        // Pega posiÁ„o do mouse no mundo
+
+        // Pega posi√ß√£o do mouse no mundo
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
-        // DireÁ„o entre player e mouse
-        Vector3 direcao = mousePos - transform.position;
-        float angulo = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
-        // Rotaciona a lanterna e a m„o
-        maoLanterna.rotation = Quaternion.Euler(0, 0, angulo + offsetRotacao);
-        // Faz a luz olhar na mesma direÁ„o
-        luzLanterna.transform.rotation = Quaternion.Euler(0, 0, angulo + offsetRotacao);
+
+        mousePos.z = 0f;
+
+        // Calcula dire√ß√£o da lanterna para o mouse
+
+        Vector3 direction = mousePos - lantern.position;
+
+        // Calcula o √¢ngulo em graus
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Limita o √¢ngulo
+
+        angle = Mathf.Clamp(angle, minAngle, maxAngle);
+
+        // Aplica a rota√ß√£o
+
+        lantern.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
     }
+
 }
