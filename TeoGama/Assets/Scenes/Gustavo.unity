@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 638635540}
   m_Layer: 3
   m_Name: Paredao
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3182,7 +3182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e2a8cc00ca4dab42b5a1f51f076998c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: Infinity
+  lifetime: 6
   speed: 2
   target: {fileID: 865948253}
   rb: {fileID: 865948251}
