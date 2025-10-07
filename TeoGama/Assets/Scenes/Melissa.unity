@@ -119,39 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &228697620
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 228697621}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &228697621
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228697620}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9530872, y: 0.8585906, z: 66.88876}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1308989396}
-  - {fileID: 887260389}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &308723364
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887260389}
   - component: {fileID: 887260391}
+  - component: {fileID: 887260392}
   m_Layer: 0
   m_Name: LanternaLuz
   m_TagString: Untagged
@@ -345,12 +313,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887260388}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -1.91, z: -66.88876}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20.859167, y: 38.026558, z: -2004.0717}
+  m_LocalScale: {x: 43.448704, y: 22.267462, z: 22.267462}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 228697621}
+  m_Father: {fileID: 1168723243}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &887260391
 MonoBehaviour:
@@ -391,7 +359,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 15
-  m_PointLightOuterAngle: 89.83426
+  m_PointLightOuterAngle: 46.197895
   m_PointLightInnerRadius: 1
   m_PointLightOuterRadius: 12
   m_ShapeLightParametricSides: 5
@@ -404,6 +372,25 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &887260392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887260388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac12a1921e74c434a9553ac6c2b0daea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanternTransform: {fileID: 1168723243}
+  lightTransform: {fileID: 887260389}
+  rotationSpeed: 10
+  swayAmount: 5
+  swaySpeed: 2
+  minAngle: 22
+  maxAngle: -35
 --- !u!1 &1168723242
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +403,7 @@ GameObject:
   - component: {fileID: 1168723246}
   - component: {fileID: 1168723245}
   - component: {fileID: 1168723244}
+  - component: {fileID: 1168723247}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -432,14 +420,15 @@ RectTransform:
   m_GameObject: {fileID: 1168723242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.481784, y: 4.8425055, z: 4.8425055}
+  m_LocalScale: {x: 2.481784, y: 4.842505, z: 4.842505}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 887260389}
   m_Father: {fileID: 1308989396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -321}
+  m_AnchoredPosition: {x: 0, y: -372.99878}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168723244
@@ -497,6 +486,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168723242}
   m_CullTransparentMesh: 1
+--- !u!114 &1168723247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168723242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac12a1921e74c434a9553ac6c2b0daea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanternTransform: {fileID: 1168723243}
+  lightTransform: {fileID: 887260389}
+  rotationSpeed: 10
+  swayAmount: 5
+  swaySpeed: 2
+  minAngle: 22
+  maxAngle: -45
 --- !u!1 &1308989392
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +600,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1168723243}
-  m_Father: {fileID: 228697621}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -759,7 +767,7 @@ Transform:
   m_GameObject: {fileID: 2147466591}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7934, y: -0.1884, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20.036924, y: 11.503378, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -772,5 +780,5 @@ SceneRoots:
   - {fileID: 778877976}
   - {fileID: 1641782332}
   - {fileID: 308723367}
-  - {fileID: 228697621}
   - {fileID: 2147466593}
+  - {fileID: 1308989396}
