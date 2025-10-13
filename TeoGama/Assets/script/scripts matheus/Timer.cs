@@ -8,8 +8,7 @@ public class Cronometro : MonoBehaviour
 
     public Text textoCronometro; 
 
-    public int minutosLimite = 2; //limite que o cronômetro vai ter 
-
+    public int minutosLimite = 2; 
     private int minutos = 0;
 
     private int segundos = 0;
@@ -22,7 +21,7 @@ public class Cronometro : MonoBehaviour
 
     {
 
-        //iniciar automaticamente
+        
 
         Iniciar();
 
@@ -58,9 +57,9 @@ public class Cronometro : MonoBehaviour
 
             {
 
-                Parar();
+               // Parar();
 
-                Debug.Log("Cronômetro atingiu " + minutosLimite + " minutos.");
+                //Debug.Log("Cronï¿½metro atingiu " + minutosLimite + " minutos.");
 
             }
 
@@ -68,7 +67,7 @@ public class Cronometro : MonoBehaviour
 
             {
 
-                Debug.Log($"Tempo decorrido: {minutos:D2}:{segundos:D2}");
+               // Debug.Log($"Tempo decorrido: {minutos:D2}:{segundos:D2}");
 
             }
 
