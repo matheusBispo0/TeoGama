@@ -16,10 +16,7 @@ public class Bala : MonoBehaviour
             
             Destroy(gameObject);
         }
-        else if (!other.CompareTag("Enemy"))
-        {
-            
-            Destroy(gameObject);
-        }
+
     }
+
 }
