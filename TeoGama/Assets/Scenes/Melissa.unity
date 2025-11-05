@@ -299,7 +299,7 @@ MonoBehaviour:
     - "Sem escravid\xE3o, n\xE3o h\xE1 progresso."
     - Nem todos querem ser livres.
     correctIndex: 0
-  - statement: "Os escravizados s\xE3 inferiores por natureza!"
+  - statement: "Os escravizados s\xE3o inferiores por natureza!"
     options:
     - "A cor n\xE3o define a raz\xE3o ou direito."
     - "A lei n\xE3o se aplica a todos."
