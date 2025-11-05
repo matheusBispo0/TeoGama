@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Matheus.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/parkour.unity
+    guid: 882fae587fb68a84f87776247206650f
+  - enabled: 1
     path: Assets/Scenes/Gustavo.unity
     guid: b87d53ce80900674d901c129a9da4aa9
   - enabled: 1
@@ -23,9 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending_Neutra.unity
     guid: 82db539f21821154c872e43b62e7a3fb
-  - enabled: 1
-    path: Assets/Scenes/parkour.unity
-    guid: 882fae587fb68a84f87776247206650f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
