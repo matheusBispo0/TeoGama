@@ -301,14 +301,14 @@ MonoBehaviour:
     correctIndex: 0
   - statement: "Os escravizados s\xE3o inferiores por natureza!"
     options:
-    - "A cor n\xE3o define a raz\xE3o ou direito."
     - "A lei n\xE3o se aplica a todos."
     - Nem todos merecem liberdade.
+    - "A cor n\xE3o define a raz\xE3o ou direito."
     correctIndex: 0
   - statement: A liberdade causa desordem.
     options:
-    - "A justi\xE7a nasce da liberdade."
     - "A ordem vem da submiss\xE3o."
+    - "A justi\xE7a nasce da liberdade."
     - "O medo \xE9 necess\xE1rio."
     correctIndex: 0
 --- !u!4 &255226489
