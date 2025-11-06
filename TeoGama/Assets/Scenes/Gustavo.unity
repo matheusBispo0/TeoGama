@@ -3529,8 +3529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 865948253}
-  speed: 2
-  chaseRange: 5
+  speed: 4
+  chaseRange: 10
 --- !u!114 &1244749129
 MonoBehaviour:
   m_ObjectHideFlags: 0
