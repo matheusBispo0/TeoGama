@@ -2967,7 +2967,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2988,7 +2988,7 @@ Transform:
   m_GameObject: {fileID: 1861854806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.8, y: -3.32, z: 87.83}
+  m_LocalPosition: {x: 4.8, y: -3.32, z: 87.07}
   m_LocalScale: {x: 1.7778, y: 1.7778, z: 1.7778}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3483,7 +3483,6 @@ GameObject:
   - component: {fileID: 1958055991}
   - component: {fileID: 1958055990}
   - component: {fileID: 1958055992}
-  - component: {fileID: 1958055993}
   m_Layer: 0
   m_Name: chave
   m_TagString: chave
@@ -3659,20 +3658,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaveVisualPrefab: {fileID: 1958055987}
---- !u!114 &1958055993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958055987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21fe9fca8d680754e986d56d3f2df718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChaveFlutuante
-  amplitude: 0.15
-  speed: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
