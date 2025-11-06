@@ -1331,7 +1331,7 @@ GameObject:
   - component: {fileID: 732926462}
   - component: {fileID: 732926463}
   m_Layer: 0
-  m_Name: Objeto vazio
+  m_Name: Objeto do Enemy Shooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1366,8 +1366,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooter
   firePoint: {fileID: 732926461}
   bulletPrefab: {fileID: 1403499839}
-  shootInterval: 3
+  shootInterval: 2
   bulletSpeed: 7
+  maxShootDistance: 11
 --- !u!114 &732926463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,7 +1393,6 @@ GameObject:
   - component: {fileID: 783159257}
   - component: {fileID: 783159256}
   - component: {fileID: 783159255}
-  - component: {fileID: 783159258}
   m_Layer: 0
   m_Name: Enemy Shooter
   m_TagString: Enemy
@@ -1502,18 +1502,6 @@ Transform:
   - {fileID: 732926461}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &783159258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783159252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f37c5a3adc8ce1429383a98252e37e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InimigoAtirador
 --- !u!1 &810906896
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,8 +3531,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 865948253}
-  speed: 2
-  chaseRange: 5
+  speed: 4
+  chaseRange: 10
 --- !u!114 &1244749129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3629,6 +3617,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DerrotaPlayer
   gameOverUI: {fileID: 618416021}
+--- !u!114 &1403499853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403499839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70cc952daa36594e9146d5f86928135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletHoming
+  speed: 6
+  homingTime: 1
 --- !u!1001 &1473186394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3721,6 +3723,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 673970982547346438, guid: ac52368251c938f409d9420db7993f03, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1403499852}
+    - targetCorrespondingSourceObject: {fileID: 673970982547346438, guid: ac52368251c938f409d9420db7993f03, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1403499853}
   m_SourcePrefab: {fileID: 100100000, guid: ac52368251c938f409d9420db7993f03, type: 3}
 --- !u!1 &1476405566
 GameObject:
