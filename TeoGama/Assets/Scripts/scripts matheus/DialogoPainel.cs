@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class DialogoPainel : MonoBehaviour
@@ -16,6 +16,8 @@ public class DialogoPainel : MonoBehaviour
     private bool isPlayerNear = false;
     private int currentLine = 0;
     private bool inDialogue = false;
+
+    private PlayerMovement playerMovement; // 👈 referência ao script de movimento
 
     void Start()
     {
@@ -43,7 +45,9 @@ public class DialogoPainel : MonoBehaviour
         npcNameText.text = npcName;
         currentLine = 0;
         dialogText.text = dialogLines[currentLine];
-        
+
+        if (playerMovement != null)
+            playerMovement.canMove = false; // 👈 trava o jogador
     }
 
     void NextLine()
@@ -63,6 +67,9 @@ public class DialogoPainel : MonoBehaviour
     {
         inDialogue = false;
         dialogPanel.SetActive(false);
+
+        if (playerMovement != null)
+            playerMovement.canMove = true; // 👈 libera o jogador
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -71,6 +78,8 @@ public class DialogoPainel : MonoBehaviour
         {
             isPlayerNear = true;
             if (!inDialogue) interactUI.SetActive(true);
+
+            playerMovement = other.GetComponent<PlayerMovement>(); // 👈 pega o script do jogador
         }
     }
 
