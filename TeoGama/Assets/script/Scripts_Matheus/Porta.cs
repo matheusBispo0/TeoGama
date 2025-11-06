@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Porta : MonoBehaviour
 {
-    public string nomeCenaDestino = "Cena2"; // nome da cena para onde vai
+    public string nomeCenaDestino = "Gustavo"; // nome da cena para onde vai
     public float tempoAntesDeTrocar = 1f;    // tempo da animação/espera
     public Animator animator;                // opcional, se tiver animação
     public string parametroAbrir = "Abrir";  // nome do parâmetro no Animator
