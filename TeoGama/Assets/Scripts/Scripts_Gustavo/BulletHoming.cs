@@ -2,22 +2,30 @@ using UnityEngine;
 
 public class BulletHoming : MonoBehaviour
 {
-    public float speed = 6f;
+    public float speed = 6f;    
+    public float homingTime = 1f;
 
     Rigidbody2D rb;
     Transform player;
+    float homingTimer;
 
-    public void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GameObject p = GameObject.FindGameObjectWithTag("Player");
-        if (p != null) player = p.transform;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        homingTimer = homingTime;
     }
 
-    public void FixedUpdate()
+    void FixedUpdate()
     {
         if (player == null) return;
-        Vector2 dir = ((Vector2)player.position - (Vector2)transform.position).normalized;
-        rb.linearVelocity = dir * speed;
+
+        if (homingTimer > 0f)
+        {
+            Vector2 dir = ((Vector2)player.position - (Vector2)transform.position).normalized;
+            rb.linearVelocity = dir * speed;
+            homingTimer -= Time.fixedDeltaTime;
+        }
+        
     }
 }
