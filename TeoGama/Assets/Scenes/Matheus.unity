@@ -366,7 +366,7 @@ MonoBehaviour:
   dialogPanel: {fileID: 1926082283}
   npcNameText: {fileID: 513872634}
   dialogText: {fileID: 1537585499}
-  npcName: NPC
+  npcName: "Balan\xE7a"
   dialogLines:
   - "Quanto tempo Luiz Gama! Nasceu com a justi\xE7a desde de cedo e ca estamos..."
   - "lembro que atrav\xE9s do seu esfor\xE7o em aprender desencadeou um  conhecimento
