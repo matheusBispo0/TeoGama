@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooter
   firePoint: {fileID: 732926461}
   bulletPrefab: {fileID: 1403499839}
-  shootInterval: 2
+  shootInterval: 3.5
   bulletSpeed: 7
   maxShootDistance: 11
 --- !u!114 &732926463
