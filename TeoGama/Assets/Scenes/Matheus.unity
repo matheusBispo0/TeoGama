@@ -187,7 +187,7 @@ Canvas:
   m_GameObject: {fileID: 4745497}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
   dialogPanel: {fileID: 1926082283}
   npcNameText: {fileID: 513872634}
   dialogText: {fileID: 1537585499}
-  npcName: NPC
+  npcName: "Balan\xE7a"
   dialogLines:
   - "Quanto tempo Luiz Gama! Nasceu com a justi\xE7a desde de cedo e ca estamos..."
   - "lembro que atrav\xE9s do seu esfor\xE7o em aprender desencadeou um  conhecimento
@@ -416,6 +416,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &349058868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349058869}
+  - component: {fileID: 349058871}
+  - component: {fileID: 349058870}
+  m_Layer: 0
+  m_Name: pixil-frame-0_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &349058869
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349058868}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -242}
+  m_LocalScale: {x: 1.3889, y: 1.3889, z: 1.3889}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1926082284}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -855, y: 35}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &349058870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349058868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -3337038689812066966, guid: 923953306888b0348b5cf3c2832d6f60, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &349058871
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349058868}
+  m_CullTransparentMesh: 1
 --- !u!1 &358995644
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,14 +792,14 @@ RectTransform:
   m_GameObject: {fileID: 513872632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9562612, y: 1.4918942, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1926082284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -833, y: -79}
+  m_AnchoredPosition: {x: -833, y: -84}
   m_SizeDelta: {x: 236.04, y: 57.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513872634
@@ -812,7 +887,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 25.52018, w: 27.26281}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1205,7 +1280,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000192d58cc
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1454,7 +1529,8 @@ Transform:
   m_LocalPosition: {x: -2.9400003, y: -0.7900001, z: 87.74}
   m_LocalScale: {x: 2.367265, y: 1.5406076, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1286093146}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.223}
 --- !u!1 &862910375
@@ -2040,7 +2116,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.5, y: 0.5}
-  m_ConnectedAnchor: {x: -0.50000006, y: 0.49999997}
+  m_ConnectedAnchor: {x: -0.50000006, y: 0.50000006}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -2201,12 +2277,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286093140}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.001944265, w: 0.99999815}
-  m_LocalPosition: {x: -2.94, y: 1.1100001, z: 87.74}
-  m_LocalScale: {x: 2.367265, y: 1.5406076, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0031208824, y: 1.2332705, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 711192667}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.223}
 --- !u!1 &1318282039
 GameObject:
@@ -2970,11 +3046,12 @@ RectTransform:
   - {fileID: 1566748821}
   - {fileID: 513872633}
   - {fileID: 1537585498}
+  - {fileID: 349058869}
   m_Father: {fileID: 4745501}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.714, y: -413.525}
+  m_AnchoredPosition: {x: -0.714, y: -408}
   m_SizeDelta: {x: 1912.761, y: 247.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1941534154
@@ -3544,6 +3621,5 @@ SceneRoots:
   - {fileID: 1941534156}
   - {fileID: 606142620}
   - {fileID: 711192667}
-  - {fileID: 1286093146}
   - {fileID: 920309123}
   - {fileID: 1181803912}
