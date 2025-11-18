@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 348d489e2183d844abb71f5a74f14cf1
+guid: cd47a25fbc8bb674790ca633ac5261ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2588767114317828960
-    second: LuizGama_parado 1_0
+      213: -904158840223960669
+    second: f2c54d94431a4199954a46eea904c1b59hNrj5J2ymrHdFp8-0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LuizGama_parado 1_0
+      name: f2c54d94431a4199954a46eea904c1b59hNrj5J2ymrHdFp8-0_0
       rect:
         serializedVersion: 2
         x: 4
         y: 0
-        width: 42
+        width: 39
         height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ac6fd0860ad21cd0800000000000000
-      internalID: -2588767114317828960
+      spriteID: 3a1fbe34358c373f0800000000000000
+      internalID: -904158840223960669
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LuizGama_parado 1_0: -2588767114317828960
+      f2c54d94431a4199954a46eea904c1b59hNrj5J2ymrHdFp8-0_0: -904158840223960669
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
