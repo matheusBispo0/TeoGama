@@ -1,49 +1,61 @@
 using UnityEngine;
- 
+
 public class Animation : MonoBehaviour
-
 {
+    // Variável de campo para armazenar o input horizontal, acessível em Update e Flip.
+    private float moveHorizontal; 
+    
+    private SpriteRenderer spriteRenderer;
+    public Animator anim;
 
-    public Animator playerAnimator;
- 
     private bool wasWalking = false;
- 
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     void Start()
-
     {
-
-        if (playerAnimator == null)
-
-            playerAnimator = GetComponentInChildren<Animator>();
-
+        if (anim == null)
+            anim = GetComponentInChildren<Animator>();
     }
- 
+
     void Update()
-
     {
-        bool isWalking = Input.GetKey(KeyCode.A) ||
-                         Input.GetKey(KeyCode.D);
- 
+        // 1. CORREÇÃO: Atribui o valor atualizado à variável de campo
+        moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical"); // Esta continua local
 
-        if (isWalking && !wasWalking)
-
+        // Chama Flip APÓS atualizar moveHorizontal
+        Flip();
+        
+        // Verifica se houve movimento horizontal ou vertical
+        if (moveHorizontal != 0 || moveVertical != 0)
         {
-
-            playerAnimator.Play("Walkinfforreal", 0, 0f);
-
+            wasWalking = true;
+        }
+        else
+        {
+            wasWalking = false;
         }
 
-        else if (!isWalking && wasWalking)
-
-        {
-
-            playerAnimator.Play("Idle", 0, 0f);
-
-        }
- 
-        wasWalking = isWalking;
-
+        // Atualiza o parâmetro do Animator
+        anim.SetBool("isWalking", wasWalking);
     }
 
+    void Flip()
+    {
+        // Usa o valor ATUALIZADO da variável de campo moveHorizontal
+        if (moveHorizontal > 0)
+        {
+            // Não invertido (olhando para a direita)
+            spriteRenderer.flipX = false; 
+        }
+        else if (moveHorizontal < 0)
+        {
+            // Invertido (olhando para a esquerda)
+            spriteRenderer.flipX = true; 
+        }
+    }
 }
- 
