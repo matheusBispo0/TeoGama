@@ -3080,9 +3080,13 @@ GameObject:
   - component: {fileID: 1861854811}
   - component: {fileID: 1861854810}
   - component: {fileID: 1861854812}
+<<<<<<< Updated upstream
   - component: {fileID: 1861854814}
   - component: {fileID: 1861854813}
   m_Layer: 3
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
