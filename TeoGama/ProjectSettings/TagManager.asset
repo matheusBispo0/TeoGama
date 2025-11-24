@@ -9,7 +9,6 @@ TagManager:
   - Ground
   - chave
   - Enemy
-  - Livro
   layers:
   - Default
   - TransparentFX
