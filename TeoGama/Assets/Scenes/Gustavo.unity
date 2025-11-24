@@ -951,19 +951,7 @@ Transform:
   m_GameObject: {fileID: 301993061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_LocalPosition: {x: 28.43, y: -6.32, z: 0}
-=======
   m_LocalPosition: {x: 28.34, y: -6.33, z: 0}
->>>>>>> b68b978d740dedc0ac02195ae53dc0043a8f7621
-=======
-  m_LocalPosition: {x: 28.4705, y: -6.4043, z: 0}
->>>>>>> parent of c37ce57 (m)
-=======
-  m_LocalPosition: {x: 28.43, y: -6.32, z: 0}
->>>>>>> parent of 48f3e0a (m)
   m_LocalScale: {x: 1.2884532, y: 1.5884271, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5211,6 +5199,7 @@ GameObject:
   - component: {fileID: 2014699723}
   - component: {fileID: 2014699722}
   - component: {fileID: 2014699721}
+  - component: {fileID: 2014699724}
   m_Layer: 0
   m_Name: book_icon_08
   m_TagString: Untagged
@@ -5313,6 +5302,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 16.73}
+--- !u!114 &2014699724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014699720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abde82f93af43fd4aaabf71b048765a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Teleporte
+  nomeDaCena: Melissa
 --- !u!1 &2017877282
 GameObject:
   m_ObjectHideFlags: 0
