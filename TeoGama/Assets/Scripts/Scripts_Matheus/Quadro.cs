@@ -14,9 +14,24 @@ public class Quadro : MonoBehaviour
    }
    void OnMouseDown()
    {
+       Debug.Log("CLICOU NO QUADRO");
        if (Caiu) return;
        Caiu = true;
        rb.bodyType = RigidbodyType2D.Dynamic;
        hinge.enabled = true;
+       hinge.useLimits = true;
+       hinge.limits = new JointAngleLimits2D { min = -90f, max = 0f };
+   }
+   void Update()
+   {
+       if (Caiu)
+       {
+           float ang = hinge.jointAngle;
+           if (ang <= hinge.limits.min + 0.5f)
+           {
+               rb.angularVelocity = 0f;
+               rb.freezeRotation = true;
+           }
+       }
    }
 }
