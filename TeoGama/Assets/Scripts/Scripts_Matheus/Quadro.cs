@@ -1,9 +1,15 @@
 using UnityEngine;
+
 public class Quadro : MonoBehaviour
 {
     private Rigidbody2D rb;
     private HingeJoint2D hinge;
-    public bool Caiu { get; private set; } = false; // pública apenas para leitura
+
+    public bool Caiu { get; private set; } = false;
+
+    [Header("Chave")]
+    public GameObject chavePrefab;   // prefab da chave
+    public Transform spawnChave;     // posição onde a chave aparece
 
     void Start()
     {
@@ -20,7 +26,6 @@ public class Quadro : MonoBehaviour
         {
             Caiu = true;
 
-            // ativa física e hinge
             rb.bodyType = RigidbodyType2D.Dynamic;
             hinge.enabled = true;
             hinge.anchor = new Vector2(-0.5f, 0.5f);
@@ -28,12 +33,27 @@ public class Quadro : MonoBehaviour
             hinge.connectedBody = null;
 
             hinge.useLimits = true;
-            JointAngleLimits2D limits = new JointAngleLimits2D();
-            limits.min = -180f;
-            limits.max = 180f;
-            hinge.limits = limits;
+            hinge.limits = new JointAngleLimits2D { min = -180f, max = 180f };
 
             Debug.Log("O quadro caiu!");
+
+            SpawnChave();
+        }
+    }
+
+    void SpawnChave()
+    {
+        if (chavePrefab != null)
+        {
+            GameObject chave = Instantiate(chavePrefab, spawnChave.position, Quaternion.identity);
+
+            // Mantém escala original do prefab
+            chave.transform.localScale = Vector3.one;
+
+            // Não fica filho do quadro
+            chave.transform.SetParent(null);
+
+            Debug.Log("Chave criada.");
         }
     }
 }
