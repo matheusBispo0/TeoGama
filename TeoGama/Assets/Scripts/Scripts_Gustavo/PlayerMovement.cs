@@ -1,25 +1,28 @@
 ﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-
 {
+    [Header("Movimentação")]
     public float moveSpeed = 5f;
-    public float jumpForce = 5f;
 
-    private Rigidbody2D rb;
+    [Header("Pulo")]
+    public float jumpForce = 12f;
     private bool isGrounded;
-
-    [SerializeField]
-    public Transform groundCheck;
-    [SerializeField]
-    private float checkRadius = 0.2f;
-    [SerializeField]
-    private LayerMask groundLayer;
-
-    // Adicione esta nova variável
     private bool canJump;
 
-    public bool canMove { get; internal set; }
+    [Header("Detecção de Chão")]
+    public Transform groundCheck;
+    public float checkRadius = 0.2f;
+    public LayerMask groundLayer;
+
+    private Rigidbody2D rb;
+
+    // Pode ou não se mover (usado por diálogos, cutscenes etc.)
+    public bool canMove = true;
+
+    // Variável da chave
+    [HideInInspector]
+    public bool hasKey = false;
 
     void Start()
     {
@@ -28,24 +31,49 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        Move();
+        Jump();
+    }
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
-
-        // Verifique se o jogador pode pular
-        if (isGrounded)
+    void Move()
+    {
+        if (!canMove)
         {
-            canJump = true;
+            // Travar movimento horizontal
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            return;
         }
 
-        // Condição para pular: botão pressionado E pode pular
+        float moveInput = Input.GetAxisRaw("Horizontal");
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+    }
+
+    void Jump()
+    {
+        if (!canMove)
+            return;
+
+        // Detectar chão
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+
+        if (isGrounded)
+            canJump = true;
+
+        // Pular
         if (Input.GetButtonDown("Jump") && canJump)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-
-            // Defina a flag como false imediatamente após o pulo
             canJump = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Coletar chave
+        if (collision.CompareTag("Key"))
+        {
+            hasKey = true;
+            Destroy(collision.gameObject);
         }
     }
 }
