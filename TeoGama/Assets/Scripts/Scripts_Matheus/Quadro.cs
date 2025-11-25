@@ -1,37 +1,34 @@
 using UnityEngine;
+
 public class Quadro : MonoBehaviour
 {
-   public Rigidbody2D pivotRB;
-   private Rigidbody2D rb;
-   private HingeJoint2D hinge;
-   public bool Caiu { get; private set; } = false;
-   void Start()
-   {
-       rb = GetComponent<Rigidbody2D>();
-       hinge = GetComponent<HingeJoint2D>();
-       rb.bodyType = RigidbodyType2D.Static;
-       hinge.enabled = false;
-   }
-   void OnMouseDown()
-   {
-       Debug.Log("CLICOU NO QUADRO");
-       if (Caiu) return;
-       Caiu = true;
-       rb.bodyType = RigidbodyType2D.Dynamic;
-       hinge.enabled = true;
-       hinge.useLimits = true;
-       hinge.limits = new JointAngleLimits2D { min = -90f, max = 0f };
-   }
-   void Update()
-   {
-       if (Caiu)
-       {
-           float ang = hinge.jointAngle;
-           if (ang <= hinge.limits.min + 0.5f)
-           {
-               rb.angularVelocity = 0f;
-               rb.freezeRotation = true;
-           }
-       }
-   }
+    public bool Caiu = false;
+
+    public float duracao = 5f;
+
+    private void OnMouseDown()
+    {
+        if (!Caiu)
+        {
+            StartCoroutine(CairSuavemente());
+        }
+    }
+
+    private System.Collections.IEnumerator CairSuavemente()
+    {
+        Caiu = true;
+
+        Quaternion rotInicial = transform.rotation;
+        Quaternion rotFinal = Quaternion.Euler(0, 0, -30);
+
+        float tempo = 0;
+
+        while (tempo < duracao)
+        {
+            transform.rotation = Quaternion.Lerp(rotInicial, rotFinal, tempo / duracao);
+            tempo += Time.deltaTime;
+            yield return null;
+        }
+        transform.rotation = rotFinal;
+    }
 }

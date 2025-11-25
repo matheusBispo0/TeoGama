@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - chave
   - Enemy
+  - Key
   layers:
   - Default
   - TransparentFX
