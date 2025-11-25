@@ -2,15 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class BotaoTrocaCena : MonoBehaviour
 {
+    [SerializeField] private string nomeDaCena;
     public void TrocarCena()
     {
-        SceneManager.LoadScene("Iniciar (Melissa)");
-        Time.timeScale = 1.0f;
-    }
-
-    public void MudaDECena()
-    {
-        SceneManager.LoadScene("Entrada");
-        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(nomeDaCena);
     }
 }

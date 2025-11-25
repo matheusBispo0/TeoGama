@@ -1,27 +1,25 @@
 ﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
+
 {
     public float moveSpeed = 5f;
-    public float jumpForce = 12f;
-
-    [Header("Ground Check")]
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float checkRadius = 0.15f;
-    [SerializeField] private LayerMask groundLayer;
+    public float jumpForce = 5f;
 
     private Rigidbody2D rb;
-    private float horizontalInput;
-
     private bool isGrounded;
 
-    private float coyoteTime = 0.12f;
-    private float coyoteCounter;
+    [SerializeField]
+    public Transform groundCheck;
+    [SerializeField]
+    private float checkRadius = 0.2f;
+    [SerializeField]
+    private LayerMask groundLayer;
 
-    private float jumpBufferTime = 0.12f;
-    private float jumpBufferCounter;
+    // Adicione esta nova variável
+    private bool canJump;
 
-    public bool canMove = true;
+    public bool canMove { get; internal set; }
 
     void Start()
     {
@@ -30,58 +28,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        float moveInput = Input.GetAxisRaw("Horizontal");
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // 🔵 TESTE 1 — Detectar o apertar do espaço
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("APERTOU SPACE!");
-            jumpBufferCounter = jumpBufferTime;
-        }
-        else
-            jumpBufferCounter -= Time.deltaTime;
-
-        // Verifica chão
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
-        // 🔵 TESTE 2 — Mostrar se está no chão
+        // Verifique se o jogador pode pular
         if (isGrounded)
-            Debug.Log("NO CHÃO");
-
-        // Coyote time
-        if (isGrounded)
-            coyoteCounter = coyoteTime;
-        else
-            coyoteCounter -= Time.deltaTime;
-
-        // 🔵 TESTE 3 — Verificar condição do pulo
-        if (jumpBufferCounter > 0 && coyoteCounter > 0)
         {
-            Debug.Log("CONDICAO DE PULO ATIVA!");
-            Jump();
-            jumpBufferCounter = 0;
-            coyoteCounter = 0;
+            canJump = true;
         }
-    }
 
-    void FixedUpdate()
-    {
-        if (canMove)
-            rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
-    }
+        // Condição para pular: botão pressionado E pode pular
+        if (Input.GetButtonDown("Jump") && canJump)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
-    void Jump()
-    {
-        Debug.Log("PULOU!!!");
-
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (groundCheck == null) return;
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
+            // Defina a flag como false imediatamente após o pulo
+            canJump = false;
+        }
     }
 }

@@ -355,19 +355,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1264694648}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2107310120}
-        m_TargetAssemblyTypeName: BotaoTrocaCena, Assembly-CSharp
-        m_MethodName: TrocarCena
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1264694648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,8 +453,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Voc\xEA perdeu!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bf972c0aa1e533d48b3c144c49885ed1, type: 2}
+  m_sharedMaterial: {fileID: -8913290346790211528, guid: bf972c0aa1e533d48b3c144c49885ed1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -827,7 +815,6 @@ GameObject:
   - component: {fileID: 2107310118}
   - component: {fileID: 2107310117}
   - component: {fileID: 2107310116}
-  - component: {fileID: 2107310120}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -920,18 +907,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2107310120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107310115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 240e67cf2c73ad24ba8c756485a49537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BotaoTrocaCena
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

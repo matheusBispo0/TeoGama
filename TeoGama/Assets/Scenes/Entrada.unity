@@ -1,4 +1,4 @@
-W%YAML 1.1
+%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
 OcclusionCullingSettings:
@@ -1420,37 +1420,6 @@ Transform:
   - {fileID: 654498385}
   m_Father: {fileID: 430929619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1030384150
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1030384151}
-  m_Layer: 0
-  m_Name: cccc
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1030384151
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030384150}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1736430033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1033114624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,7 +2376,7 @@ GameObject:
   - component: {fileID: 1724362710}
   - component: {fileID: 1724362709}
   - component: {fileID: 1724362712}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Chao
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2541,7 +2510,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724362708}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2712,11 +2681,10 @@ Transform:
   m_GameObject: {fileID: 1736430029}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.93, y: -2.51, z: 0}
-  m_LocalScale: {x: 1.8024153, y: 3.0198061, z: 1.601}
+  m_LocalPosition: {x: 5.93, y: -3.31, z: 0}
+  m_LocalScale: {x: 1.125806, y: 1.8862001, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1030384151}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1736430034
@@ -2950,7 +2918,7 @@ MonoBehaviour:
   nomeCenaDestino: Gustavo
   tempoAntesDeTrocar: 1
   animator: {fileID: 0}
-  parametroAbrir: chave
+  parametroAbrir: Abrir
 --- !u!212 &1806587374
 SpriteRenderer:
   m_ObjectHideFlags: 0
