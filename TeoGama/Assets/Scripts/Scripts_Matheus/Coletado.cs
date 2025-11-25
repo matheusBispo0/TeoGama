@@ -1,59 +1,34 @@
 using UnityEngine;
 
-
-public class Coletado : MonoBehaviour
-{
-    public GameObject chaveVisualPrefab;  // faz com que apareça uma chave sobre o jogador o player
-    public Quadro quadro;                 // referência ao script do quadro
-
+public class Coletado: MonoBehaviour
+{ 
     private bool jogadorPerto = false;
     private Transform jogadorTransform;
 
     void Update()
     {
-        // Só tenta coletar se o jogador apertar E perto da chave
         if (jogadorPerto && Input.GetKeyDown(KeyCode.E))
         {
-            
-            if (quadro != null && quadro.Caiu)
-            {
-                ColetarChave();
-            }
-            else
-            {
-                Debug.Log("Você ainda não pode pegar a chave — o quadro não caiu!");
-            }
+            Debug.Log("Chave coletada!");
+            // Torna filha do player para referência na porta
+            transform.SetParent(jogadorTransform);
+            transform.localPosition = new Vector3(0, 2f, 0);
+            transform.localScale = Vector3.one; // mantém escala
+            // A partir daqui a chave está "no player" e pode ser usada na porta
         }
     }
 
-    void ColetarChave()
-    {
-        if (jogadorTransform == null) return;
-
-        // vai fazer aparecer uma chave sobre o jogador
-        GameObject chave = Instantiate(
-            chaveVisualPrefab,
-            jogadorTransform.position + new Vector3(0, 2f, 0),
-            Quaternion.identity
-        );
-
-        chave.transform.SetParent(jogadorTransform);
-        chave.name = "chave";
-
-        Destroy(gameObject); // ele vai destroir a chave da cena
-        Debug.Log("Chave coletada!");
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             jogadorPerto = true;
             jogadorTransform = other.transform;
+            Debug.Log("Player perto da chave. Pressione E para pegar.");
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

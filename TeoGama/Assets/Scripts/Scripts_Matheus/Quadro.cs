@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public class Quadro : MonoBehaviour
 {
    public Rigidbody2D pivotRB;
