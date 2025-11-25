@@ -29,8 +29,8 @@ public class Quadro : MonoBehaviour
 
             hinge.useLimits = true;
             JointAngleLimits2D limits = new JointAngleLimits2D();
-            limits.min = -50f;
-            limits.max = 50f;
+            limits.min = -180f;
+            limits.max = 180f;
             hinge.limits = limits;
 
             Debug.Log("O quadro caiu!");

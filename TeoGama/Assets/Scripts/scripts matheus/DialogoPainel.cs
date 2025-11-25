@@ -17,7 +17,7 @@ public class DialogoPainel : MonoBehaviour
     private int currentLine = 0;
     private bool inDialogue = false;
 
-    private PlayerMovement playerMovement; // 👈 referência ao script de movimento
+    private PlayerMovement playerMovement; 
 
     void Start()
     {

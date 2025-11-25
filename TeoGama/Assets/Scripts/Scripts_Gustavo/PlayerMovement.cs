@@ -1,49 +1,51 @@
 ﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
+
 {
     public float moveSpeed = 5f;
-    public float jumpForce = 7f;
+    public float jumpForce = 5f;
+
     private Rigidbody2D rb;
-    private bool isGrounded = false;
+    private bool isGrounded;
 
-    [HideInInspector] public bool canMove = true; // controla se o jogador pode andar/pular
+    [SerializeField]
+    public Transform groundCheck;
+    [SerializeField]
+    private float checkRadius = 0.2f;
+    [SerializeField]
+    private LayerMask groundLayer;
 
-    public void Start()
+    // Adicione esta nova variável
+    private bool canJump;
+
+    public bool canMove { get; internal set; }
+
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Update()
+    void Update()
     {
-        if (!canMove) // se não puder se mover, trava o movimento
+        float moveInput = Input.GetAxisRaw("Horizontal");
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+
+        // Verifique se o jogador pode pular
+        if (isGrounded)
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-            return;
+            canJump = true;
         }
 
-        float move = Input.GetAxis("Horizontal");
-        rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        // Condição para pular: botão pressionado E pode pular
+        if (Input.GetButtonDown("Jump") && canJump)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-    }
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            isGrounded = false;
+            // Defina a flag como false imediatamente após o pulo
+            canJump = false;
         }
     }
 }
