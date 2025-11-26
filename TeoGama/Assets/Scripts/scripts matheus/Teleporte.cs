@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Teleporte : MonoBehaviour
+//public class Teleporte : MonoBehaviour
 {
     
 
@@ -14,7 +14,7 @@ public class Teleporte : MonoBehaviour
 
     
     // Update is called once per frame
-    void Update()
+   // void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
