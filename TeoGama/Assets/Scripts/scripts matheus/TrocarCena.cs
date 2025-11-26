@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//public class Teleporte : MonoBehaviour
+
+public class TrocarCena : MonoBehaviour
 {
     
 
@@ -14,12 +15,12 @@ using UnityEngine.SceneManagement;
 
     
     // Update is called once per frame
-   // void Update()
-    {
+   void Update()
+   {
         if (Input.GetKeyDown(KeyCode.E))
         {
             SceneManager.LoadScene("Melissa");
             Time.timeScale = 1.0f;
         }
-    }
+   }
 }
