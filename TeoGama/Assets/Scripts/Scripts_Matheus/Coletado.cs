@@ -38,7 +38,7 @@ public class Coletado : MonoBehaviour
         );
 
         chave.transform.SetParent(jogadorTransform);
-        chave.name = "chave";
+        chave.name = "Key";
 
         Destroy(gameObject); // ele vai destroir a chave da cena
         Debug.Log("Chave coletada!");
