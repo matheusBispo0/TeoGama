@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Key
   - Boss
+  - Quadro
+  - Door
   layers:
   - Default
   - TransparentFX
