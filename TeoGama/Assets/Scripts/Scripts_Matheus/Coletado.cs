@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Coletado : MonoBehaviour
 {
-    public GameObject chaveVisualPrefab;  // chave que aparece sobre o jogador
+    public GameObject chaveVisualPrefab;  // faz com que apareça uma chave sobre o jogador o player
     public Quadro quadro;                 // referência ao script do quadro
 
     private bool jogadorPerto = false;
@@ -14,7 +14,7 @@ public class Coletado : MonoBehaviour
         // Só tenta coletar se o jogador apertar E perto da chave
         if (jogadorPerto && Input.GetKeyDown(KeyCode.E))
         {
-            // Verifica se o quadro já caiu
+            
             if (quadro != null && quadro.Caiu)
             {
                 ColetarChave();
@@ -30,17 +30,17 @@ public class Coletado : MonoBehaviour
     {
         if (jogadorTransform == null) return;
 
-        // Cria a chave sobre o jogador
+        // vai fazer aparecer uma chave sobre o jogador
         GameObject chave = Instantiate(
             chaveVisualPrefab,
-            jogadorTransform.position + new Vector3(0, 1f, 0),
+            jogadorTransform.position + new Vector3(0, 2f, 0),
             Quaternion.identity
         );
 
         chave.transform.SetParent(jogadorTransform);
-        chave.name = "chave";
+        chave.name = "Key";
 
-        Destroy(gameObject); // destrói a chave da cena
+        Destroy(gameObject); // ele vai destroir a chave da cena
         Debug.Log("Chave coletada!");
     }
 

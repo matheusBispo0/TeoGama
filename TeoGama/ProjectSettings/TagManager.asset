@@ -9,7 +9,8 @@ TagManager:
   - Ground
   - chave
   - Enemy
-  - Livro
+  - Key
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - Inimigo
   - Enemy
-  - 
+  - groundCheck
   - 
   - 
   - 

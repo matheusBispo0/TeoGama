@@ -1,39 +1,34 @@
 using UnityEngine;
+
 public class Quadro : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private HingeJoint2D hinge;
-    public bool Caiu { get; private set; } = false; // pública apenas para leitura
+    public bool Caiu = false;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        rb.bodyType = RigidbodyType2D.Static;
+    public float duracao = 5f;
 
-        hinge = gameObject.AddComponent<HingeJoint2D>();
-        hinge.enabled = false;
-    }
-
-    void OnMouseDown()
+    private void OnMouseDown()
     {
         if (!Caiu)
         {
-            Caiu = true;
-
-            // ativa física e hinge
-            rb.bodyType = RigidbodyType2D.Dynamic;
-            hinge.enabled = true;
-            hinge.anchor = new Vector2(-0.5f, 0.5f);
-            hinge.connectedAnchor = hinge.anchor;
-            hinge.connectedBody = null;
-
-            hinge.useLimits = true;
-            JointAngleLimits2D limits = new JointAngleLimits2D();
-            limits.min = -50f;
-            limits.max = 50f;
-            hinge.limits = limits;
-
-            Debug.Log("O quadro caiu!");
+            StartCoroutine(CairSuavemente());
         }
+    }
+
+    private System.Collections.IEnumerator CairSuavemente()
+    {
+        Caiu = true;
+
+        Quaternion rotInicial = transform.rotation;
+        Quaternion rotFinal = Quaternion.Euler(0, 0, -30);
+
+        float tempo = 0;
+
+        while (tempo < duracao)
+        {
+            transform.rotation = Quaternion.Lerp(rotInicial, rotFinal, tempo / duracao);
+            tempo += Time.deltaTime;
+            yield return null;
+        }
+        transform.rotation = rotFinal;
     }
 }

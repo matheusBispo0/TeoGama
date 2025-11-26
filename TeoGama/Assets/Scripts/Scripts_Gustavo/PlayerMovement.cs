@@ -1,49 +1,75 @@
 ﻿using UnityEngine;
-
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 7f;
-    private Rigidbody2D rb;
-    private bool isGrounded = false;
-
-    [HideInInspector] public bool canMove = true; // controla se o jogador pode andar/pular
-
-    public void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    public void Update()
-    {
-        if (!canMove) // se não puder se mover, trava o movimento
-        {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-            return;
-        }
-
-        float move = Input.GetAxis("Horizontal");
-        rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }
+   [Header("Movimentação")]
+   public float moveSpeed = 5f;
+   [Header("Pulo")]
+   public float jumpForce = 12f;
+   private bool isGrounded;
+   private bool canJump;
+   [Header("Detecção de Chão")]
+   public Transform groundCheck;
+   public float checkRadius = 0.2f;
+   public LayerMask groundLayer;
+   private Rigidbody2D rb;
+   // Pode ou não se mover (usado por diálogos, cutscenes etc.)
+   public bool canMove = true;
+   // Variável da chave
+   [HideInInspector]
+   public bool hasKey = false;
+   // 🔹 ADICIONADO: Animator
+   private Animator anim;
+   void Start()
+   {
+       rb = GetComponent<Rigidbody2D>();
+       // 🔹 ADICIONADO: pega o Animator automaticamente
+       anim = GetComponent<Animator>();
+   }
+   void Update()
+   {
+       Move();
+       Jump();
+       // 🔹 ADICIONADO: Atualiza animação (Idle / Run)
+       anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+   }
+   void Move()
+   {
+       if (!canMove)
+       {
+           // Travar movimento horizontal
+           rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+           return;
+       }
+       float moveInput = Input.GetAxisRaw("Horizontal");
+       rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+       // 🔹 ADICIONADO: Virar sprite
+       if (moveInput > 0)
+           transform.localScale = new Vector3(1, 1, 1);
+       else if (moveInput < 0)
+           transform.localScale = new Vector3(-1, 1, 1);
+   }
+   void Jump()
+   {
+       if (!canMove)
+           return;
+       // Detectar chão
+       isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+       if (isGrounded)
+           canJump = true;
+       // Pular
+       if (Input.GetButtonDown("Jump") && canJump)
+       {
+           rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+           canJump = false;
+       }
+   }
+   private void OnTriggerEnter2D(Collider2D collision)
+   {
+       // Coletar chave
+       if (collision.CompareTag("Key"))
+       {
+           hasKey = true;
+           Destroy(collision.gameObject);
+       }
+   }
 }

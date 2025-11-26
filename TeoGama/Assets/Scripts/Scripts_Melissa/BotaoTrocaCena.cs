@@ -5,6 +5,6 @@ public class BotaoTrocaCena : MonoBehaviour
     [SerializeField] private string nomeDaCena;
     public void TrocarCena()
     {
-        SceneManager.LoadScene(nomeDaCena);
+        SceneManager.LoadScene("Entrada");
     }
 }
