@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
+    public SpriteRenderer sprite;
    [Header("Movimentação")]
    public float moveSpeed = 5f;
    [Header("Pulo")]
@@ -44,10 +45,10 @@ public class PlayerMovement : MonoBehaviour
        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
        // 🔹 ADICIONADO: Virar sprite
        if (moveInput > 0)
-           transform.localScale = new Vector3(1, 1, 1);
+           sprite.flipX = false;
        else if (moveInput < 0)
-           transform.localScale = new Vector3(-1, 1, 1);
-   }
+            sprite.flipX = true;
+    }
    void Jump()
    {
        if (!canMove)

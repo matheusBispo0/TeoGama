@@ -71,9 +71,9 @@ public class PlayerInteraction : MonoBehaviour
            }
        }
        // abrir porta / trocar cena
-       if (podeInteragirPorta && Input.GetKeyDown(KeyCode.E))
+       if (Input.GetKeyDown(KeyCode.E))
        {
-           if (pegouChave)
+           if (pegouChave == true)
            {
                if (!string.IsNullOrEmpty(nomeDaCena))
                    SceneManager.LoadScene(nomeDaCena);

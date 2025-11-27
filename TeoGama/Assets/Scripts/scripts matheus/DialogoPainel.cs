@@ -1,4 +1,5 @@
 ﻿using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogoPainel : MonoBehaviour
@@ -12,7 +13,7 @@ public class DialogoPainel : MonoBehaviour
     [Header("NPC Info")]
     public string npcName = "NPC";
     [TextArea] public string[] dialogLines;
-
+    public bool kanTrigger = false;
     private bool isPlayerNear = false;
     private int currentLine = 0;
     private bool inDialogue = false;
@@ -36,6 +37,29 @@ public class DialogoPainel : MonoBehaviour
             NextLine();
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.gameObject.CompareTag("Player") && kanTrigger == true)
+        {
+            StartDialogue();
+            isPlayerNear = true;
+            if (!inDialogue) interactUI.SetActive(true);
+            playerMovement = other.GetComponent<PlayerMovement>();
+            playerMovement.canMove = false;
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isPlayerNear = true;
+            if (!inDialogue) interactUI.SetActive(true);
+
+            playerMovement = other.GetComponent<PlayerMovement>(); // 👈 pega o script do jogador
+        }
+    }
+
+
+
+
 
     void StartDialogue()
     {
@@ -72,16 +96,7 @@ public class DialogoPainel : MonoBehaviour
             playerMovement.canMove = true; // 👈 libera o jogador
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerNear = true;
-            if (!inDialogue) interactUI.SetActive(true);
-
-            playerMovement = other.GetComponent<PlayerMovement>(); // 👈 pega o script do jogador
-        }
-    }
+    
 
     void OnTriggerExit2D(Collider2D other)
     {
